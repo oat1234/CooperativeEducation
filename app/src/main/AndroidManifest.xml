@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.finalproject.cooperativeeducation">
+    package="com.finalproject.cooperativeeducation.activity">
 
     <application
         android:allowBackup="true"
@@ -19,7 +19,11 @@
         </activity>
         <activity
             android:name=".LoginActivity"
-            android:windowSoftInputMode="adjustResize|stateAlwaysVisible"></activity>
+            android:windowSoftInputMode="adjustResize|stateAlwaysVisible" />
+        <activity
+            android:name=".RegisterActivity" />
+
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>
