@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FF6688"
-    tools:context="com.finalproject.cooperativeeducation.SplashScreenActivity">
+    tools:context=".activity.SplashScreenActivity">
 
     <ImageView
         android:layout_width="match_parent"

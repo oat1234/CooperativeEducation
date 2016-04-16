@@ -1,4 +1,4 @@
-package com.finalproject.cooperativeeducation;
+package com.finalproject.cooperativeeducation.activity;
 
 import android.content.Intent;
 import android.os.Handler;

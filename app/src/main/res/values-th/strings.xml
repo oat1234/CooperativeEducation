@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">CooperativeEducation</string>
+
+    <string name="strGlobalCompany">สถานประกอบการ</string>
+    <string name="strGlobalStudent">นักเรียน</string>
+    <string name="strGlobalTeacher">อาจารย์</string>
+</resources>
