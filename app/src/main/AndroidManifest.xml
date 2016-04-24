@@ -25,7 +25,7 @@
 
         <activity android:name=".MainActivity" />
 
-        <activity android:name=".FaqActivity" />
+        <activity android:name=".module.FaqActivity" />
     </application>
 
 </manifest>

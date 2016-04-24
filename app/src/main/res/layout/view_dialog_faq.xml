@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="300dp"
+    android:layout_height="match_parent"
+    android:padding="8dp">
+
+    <TextView
+        android:id="@+id/txtHeaderQuestionDialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@android:color/black"
+        android:text="Question" />
+
+    <TextView
+        android:id="@+id/txtQuestionDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:textColor="@android:color/black"
+        android:background="@drawable/bg_border_black"/>
+
+    <TextView
+        android:id="@+id/txtHeaderAnswerialog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:layout_marginTop="16dp"
+        android:textColor="@android:color/black"
+        android:text="Answer" />
+
+    <TextView
+        android:id="@+id/txtAnswerDialog"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginTop="6dp"
+        android:textColor="@android:color/black"
+        android:background="@drawable/bg_border_black"/>
+</LinearLayout>

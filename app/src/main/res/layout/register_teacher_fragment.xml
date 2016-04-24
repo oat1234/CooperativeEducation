@@ -15,18 +15,21 @@
             android:layout_marginTop="15dp"/>
 
         <EditText
+            android:id="@+id/edt_teacher_Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Name"
             android:layout_marginTop="10dp"/>
 
         <EditText
+            android:id="@+id/edt_teacher_Surname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Surname"
             android:layout_marginTop="5dp"/>
 
         <EditText
+            android:id="@+id/edt_teacher_PhoneNumber"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Phone Number"
@@ -35,36 +38,42 @@
             android:layout_marginTop="5dp"/>
 
         <EditText
+            android:id="@+id/edt_teacher_Position"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Position"
             android:layout_marginTop="5dp"/>
 
         <EditText
+            android:id="@+id/edt_teacher_Faculty"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Faculty"
             android:layout_marginTop="5dp"/>
 
         <EditText
+            android:id="@+id/edt_teacher_Department"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Department"
             android:layout_marginTop="5dp"/>
 
         <EditText
+            android:id="@+id/edt_teacher_Teach"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Teach"
             android:layout_marginTop="5dp"/>
 
         <EditText
+            android:id="@+id/edt_teacher_Email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="E-mail4"
             android:layout_marginTop="5dp"/>
 
         <Button
+            android:id="@+id/btn_teacher_Submit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Submit"

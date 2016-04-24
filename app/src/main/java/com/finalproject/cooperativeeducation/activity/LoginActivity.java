@@ -43,7 +43,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
     private void goToRegister() {
         startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
-        finish();
     }
 
     private void goToMainpage() {
