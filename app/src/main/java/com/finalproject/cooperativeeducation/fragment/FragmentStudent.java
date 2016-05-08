@@ -28,7 +28,9 @@ public class FragmentStudent extends Fragment implements View.OnClickListener{
     private EditText edt_student_Detail;
     private EditText edt_student_Enterprise;
     private EditText edt_student_Address;
+    private EditText edt_student_Email;
     private Button btn_student_Submit;
+
 
     public FragmentStudent(){
 
@@ -63,6 +65,7 @@ public class FragmentStudent extends Fragment implements View.OnClickListener{
         edt_student_Detail = (EditText) view.findViewById(R.id.edt_student_Detail);
         edt_student_Enterprise = (EditText) view.findViewById(R.id.edt_student_Enterprise);
         edt_student_Address = (EditText) view.findViewById(R.id.edt_student_Address);
+        edt_student_Email = (EditText) view.findViewById(R.id.edt_student_Email) ;
         btn_student_Submit = (Button) view.findViewById(R.id.btn_student_Submit);
     }
 
@@ -105,6 +108,8 @@ public class FragmentStudent extends Fragment implements View.OnClickListener{
                     Toast.makeText(getContext(), "Please input enterprise", Toast.LENGTH_LONG) .show();
                 else if ("".equals(edt_student_Address.getText().toString()))
                     Toast.makeText(getContext(), "Please input address", Toast.LENGTH_LONG).show();
+                else if ("".equals(edt_student_Email.getText() .toString()))
+                    Toast.makeText(getContext(), "Please input Email", Toast.LENGTH_LONG) .show();
                 else{
                     if(false){
 
