@@ -10,8 +10,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.finalproject.cooperativeeducation.Util.StatusConnection;
 import com.finalproject.cooperativeeducation.activity.R;
 import com.finalproject.cooperativeeducation.controller.Utils.Validator;
+import com.finalproject.cooperativeeducation.manager.RestServiceManager;
+import com.finalproject.cooperativeeducation.manager.service.RegisterService;
 
 /**
  * Created by master on 20/3/2559.
@@ -100,6 +103,9 @@ public class FragmentCompany extends Fragment implements View.OnClickListener{
             }else{
                 if(!Validator.emailValidator(edt_company_Email.getText().toString()))
                     Toast.makeText(getContext(), "format e-mail iscorrect", Toast.LENGTH_LONG).show();
+                else{
+
+                }
             }
         }
     }

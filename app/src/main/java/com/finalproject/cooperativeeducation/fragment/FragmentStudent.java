@@ -10,7 +10,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.finalproject.cooperativeeducation.Util.StatusConnection;
 import com.finalproject.cooperativeeducation.activity.R;
+import com.finalproject.cooperativeeducation.manager.RestServiceManager;
+import com.finalproject.cooperativeeducation.manager.service.RegisterService;
 
 /**
  * Created by master on 20/3/2559.
@@ -102,6 +105,19 @@ public class FragmentStudent extends Fragment implements View.OnClickListener{
                     Toast.makeText(getContext(), "Please input enterprise", Toast.LENGTH_LONG) .show();
                 else if ("".equals(edt_student_Address.getText().toString()))
                     Toast.makeText(getContext(), "Please input address", Toast.LENGTH_LONG).show();
+                else{
+                    if(false){
+
+                    }else{
+//                        if(StatusConnection.connection(getActivity())){
+//                            RegisterService call = RestServiceManager.create(RegisterService.class);
+//                            call.register(edt_company_Name.getText().toString(),
+//                                    edt_company_Surname.getText().toString(),
+//                                    "112234455667",
+//                                    )
+//                        }
+                    }
+                }
 
             }
         }
