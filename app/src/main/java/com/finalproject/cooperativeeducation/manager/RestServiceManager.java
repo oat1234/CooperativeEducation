@@ -1,5 +1,7 @@
 package com.finalproject.cooperativeeducation.manager;
 
+import android.util.Log;
+
 import com.finalproject.cooperativeeducation.Util.BaseConfig;
 import com.google.gson.Gson;
 
@@ -17,13 +19,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by Picked on 2/5/16.
  */
 public class RestServiceManager {
-    public static String BASE_URL = BaseConfig.BaseUrl;
+    public static String BASE_URL = BaseConfig.prefixUrl();
 
     public static <T> T create(final Class<T> service) {
         return create(service, new Gson());
     }
 
     public static <T> T create(final Class<T> service, Gson gson) {
+        Log.i("GSON", "test : "+gson);
         return new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .client(getOkHttpClient())

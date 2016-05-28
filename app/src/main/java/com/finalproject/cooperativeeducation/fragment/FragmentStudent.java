@@ -19,7 +19,7 @@ import com.finalproject.cooperativeeducation.manager.service.RegisterService;
  * Created by master on 20/3/2559.
  */
 public class FragmentStudent extends Fragment implements View.OnClickListener{
-
+    private EditText edt_student_ID;
     private EditText edt_student_Name;
     private EditText edt_student_Surname;
     private EditText edt_student_PhoneNumber;
@@ -57,6 +57,7 @@ public class FragmentStudent extends Fragment implements View.OnClickListener{
     }
 
     private void initView(View view){
+        edt_student_ID = (EditText) view.findViewById(R.id.edt_student_ID);
         edt_student_Name = (EditText) view.findViewById(R.id.edt_student_Name);
         edt_student_Surname = (EditText) view.findViewById(R.id.edt_student_Surname);
         edt_student_PhoneNumber = (EditText) view.findViewById(R.id.edt_student_PhoneNumber);

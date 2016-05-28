@@ -7,8 +7,6 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.finalproject.cooperativeeducation.activity.module.FaqActivity;
-
 /**
  * Created by master on 20/3/2559.
  */

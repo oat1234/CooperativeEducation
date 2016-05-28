@@ -15,12 +15,5 @@ public interface RegisterService {
     @POST("register.php")
     @FormUrlEncoded
     Call<MessageResponseDao> register(@Field("email") String email,
-                                      @Field("password") String password,
-                                      @Field("student_number") String student_number,
-                                      @Field("name") String name,
-                                      @Field("adress") String adress,
-                                      @Field("tel") String tel,
-                                      @Field("enterprise") String enterprise,
-                                      @Field("detail") String detail,
-                                      @Field("position") String position);
+                               @Field("password") String password);
 }

@@ -17,6 +17,7 @@ import com.finalproject.cooperativeeducation.controller.Utils.Validator;
  * Created by master on 20/3/2559.
  */
 public class FragmentTeacher extends Fragment implements View.OnClickListener {
+    private EditText edt_teacher_ID;
     private EditText edt_teacher_Name;
     private EditText edt_teacher_Surname;
     private EditText edt_teacher_PhoneNumber;
@@ -50,6 +51,7 @@ public class FragmentTeacher extends Fragment implements View.OnClickListener {
         return view;
     }
     private void initView(View view){
+        edt_teacher_ID = (EditText) view.findViewById(R.id.edt_teacher_ID);
         edt_teacher_Name = (EditText) view.findViewById(R.id.edt_teacher_Name);
         edt_teacher_Surname = (EditText) view.findViewById(R.id.edt_teacher_Surname);
         edt_teacher_PhoneNumber = (EditText) view.findViewById(R.id.edt_teacher_PhoneNumber);

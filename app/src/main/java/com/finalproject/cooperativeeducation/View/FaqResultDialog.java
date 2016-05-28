@@ -1,4 +1,4 @@
-package com.finalproject.cooperativeeducation.activity.module.view;
+package com.finalproject.cooperativeeducation.View;
 
 import android.app.Dialog;
 import android.content.Context;

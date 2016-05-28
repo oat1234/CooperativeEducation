@@ -26,12 +26,10 @@
         <activity
             android:name=".LoginActivity"
             android:windowSoftInputMode="stateAlwaysVisible|adjustPan" />
-        <activity
-            android:name=".RegisterActivity" />
-
+        <activity android:name=".PersonalDetailActivity" />
         <activity android:name=".MainActivity" />
-
-        <activity android:name=".module.FaqActivity" />
+        <activity android:name=".FaqActivity" />
+        <activity android:name=".RegisterActivity"></activity>
     </application>
 
 </manifest>

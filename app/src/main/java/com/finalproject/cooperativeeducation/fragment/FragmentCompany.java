@@ -20,6 +20,7 @@ import com.finalproject.cooperativeeducation.manager.service.RegisterService;
  * Created by master on 20/3/2559.
  */
 public class FragmentCompany extends Fragment implements View.OnClickListener{
+    private EditText edt_company_ID;
     private EditText edt_company_Name;
     private EditText edt_company_Surname;
     private EditText edt_company_PhoneNumber;
@@ -55,6 +56,7 @@ public class FragmentCompany extends Fragment implements View.OnClickListener{
 
     }
     private void initView(View view){
+        edt_company_ID = (EditText) view.findViewById(R.id.edt_company_ID);
         edt_company_Name = (EditText) view.findViewById(R.id.edt_company_Name);
         edt_company_Surname = (EditText) view.findViewById(R.id.edt_company_Surname);
         edt_company_PhoneNumber = (EditText) view.findViewById(R.id.edt_company_PhoneNumber);

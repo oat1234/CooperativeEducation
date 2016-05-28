@@ -1,88 +1,115 @@
 package com.finalproject.cooperativeeducation.activity;
 
-import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
-import com.finalproject.cooperativeeducation.fragment.FragmentCompany;
-import com.finalproject.cooperativeeducation.fragment.FragmentStudent;
-import com.finalproject.cooperativeeducation.fragment.FragmentTeacher;
+import com.finalproject.cooperativeeducation.manager.RestServiceManager;
+import com.finalproject.cooperativeeducation.manager.dao.GetRegisterDao;
+import com.finalproject.cooperativeeducation.manager.dao.MessageResponseDao;
+import com.finalproject.cooperativeeducation.manager.service.GetRegisterService;
+import com.finalproject.cooperativeeducation.manager.service.RegisterService;
 
-/**
- * Created by master on 19/3/2559.
- */
-public class RegisterActivity extends AppCompatActivity{
+import org.parceler.Parcels;
 
-    private Toolbar toolbar;
-    private String mTitle;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener, Callback<GetRegisterDao>{
+
+    private Button btnSubmit;
+    private EditText edtRegisterEmail;
+    private EditText edtRegisterPass;
+    private EditText edtRegisterRePass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_register);
+
         initView();
-        init();
-        initFirst();
+
+        btnSubmit.setOnClickListener(this);
+    }
+    private void initView() {
+        btnSubmit = (Button) findViewById(R.id.btnSubmit);
+        edtRegisterEmail = (EditText) findViewById(R.id.edtRegisterEmail);
+        edtRegisterPass = (EditText) findViewById(R.id.edtRegisterPass);
+        edtRegisterRePass = (EditText) findViewById(R.id.edtRegisterRePass);
     }
 
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_register, menu);
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.btnSubmit:
+                onSubmit();
+                break;
+        }
+    }
+
+    private void onSubmit(){
+        if(validation()) {//validate
+
+            register();
+        }else{
+
+        }
+    }
+
+    private boolean validation(){
+
         return true;
     }
 
+    private void register(){
+        RegisterService service = RestServiceManager.create(RegisterService.class);
+        service.register(edtRegisterEmail.getText().toString(), edtRegisterPass.getText().toString()).enqueue(new Callback<MessageResponseDao>() {
+            @Override
+            public void onResponse(Call<MessageResponseDao> call, Response<MessageResponseDao> response) {
+                if(response.isSuccessful()){
+                    MessageResponseDao dao = response.body();
+                    if(dao.getMsg().equals("0")){
+                        Toast.makeText(RegisterActivity.this, "Email is duplicate", Toast.LENGTH_LONG).show();
+                    }else{
+                        GetRegisterService getRegisterService = RestServiceManager.create(GetRegisterService.class);
+                        getRegisterService.getRegister(edtRegisterEmail.getText().toString()).enqueue(RegisterActivity.this);
+                    }
+                }else{
+                    Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_LONG).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<MessageResponseDao> call, Throwable t) {
+                Toast.makeText(RegisterActivity.this, "Filed : "+t.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void goToPersonalDetailActivity(GetRegisterDao dao){
+        Intent intent = new Intent(RegisterActivity.this, PersonalDetailActivity.class);
+        intent.putExtra("getRegister", Parcels.wrap(dao));
+        startActivity(intent);
+    }
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        Fragment fragment = null;
-        switch (item.getItemId()){
-            case R.id.menu_company:
-                mTitle = "Company";
-                fragment = FragmentCompany.newInstance();
-                break;
-            case R.id.menu_student:
-                mTitle = "Student";
-                fragment = FragmentStudent.newInstance();
-                break;
-            case R.id.menu_teacher:
-                mTitle = "Teacher";
-                fragment = FragmentTeacher.newInstance();
-                break;
+    public void onResponse(Call<GetRegisterDao> call, Response<GetRegisterDao> response) {
+        if(response.isSuccessful()){
+            GetRegisterDao dao = response.body();
+            goToPersonalDetailActivity(dao);
+        }else{
+            Toast.makeText(RegisterActivity.this, "Failed", Toast.LENGTH_LONG).show();
         }
-
-        if(fragment != null){
-            FragmentManager fragmentManager = getSupportFragmentManager();
-            FragmentTransaction transaction =
-                    fragmentManager.beginTransaction().replace(R.id.content, fragment);
-            transaction.commit();
-            setTitle(mTitle);
-        }
-        return super.onOptionsItemSelected(item);
     }
 
-    private void initView(){
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-    }
-
-    private void init(){
-        toolbar.setTitle(mTitle);
-        toolbar.showOverflowMenu();
-        setSupportActionBar(toolbar);
-    }
-
-    private void initFirst(){
-        setTitle("Student");
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction transaction =
-                fragmentManager.beginTransaction().replace(R.id.content, FragmentStudent.newInstance());
-        transaction.commit();
-    }
-
-    private void setTitle(String title){
-        getSupportActionBar().setTitle(title);
+    @Override
+    public void onFailure(Call<GetRegisterDao> call, Throwable t) {
+        Toast.makeText(RegisterActivity.this, "Filed : "+t.getMessage(), Toast.LENGTH_LONG).show();
     }
 }

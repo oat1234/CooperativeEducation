@@ -1,4 +1,4 @@
-package com.finalproject.cooperativeeducation.activity.module;
+package com.finalproject.cooperativeeducation.activity;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,17 +6,13 @@ import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.finalproject.cooperativeeducation.Model.FaqModel;
 import com.finalproject.cooperativeeducation.View.Adapter.FaqAdapter;
+import com.finalproject.cooperativeeducation.View.FaqResultDialog;
 import com.finalproject.cooperativeeducation.View.Recycler.RecyclerItemClickListener;
 import com.finalproject.cooperativeeducation.View.Recycler.SimpleDividerItemDecoration;
-import com.finalproject.cooperativeeducation.activity.R;
-import com.finalproject.cooperativeeducation.activity.module.view.FaqResultDialog;
 
 import java.util.ArrayList;
 import java.util.List;

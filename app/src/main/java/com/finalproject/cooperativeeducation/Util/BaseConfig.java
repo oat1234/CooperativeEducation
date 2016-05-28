@@ -5,5 +5,13 @@ package com.finalproject.cooperativeeducation.Util;
  */
 public class BaseConfig {
 
-    public static String BaseUrl = "http://172.20.10.3/myproject/";
+    public static String BaseUrlProduction = "http://projectoath.esy.es/ProjectOath/myproject/";
+    public static String BaseUrlLocal = "http://172.20.10.3/myproject/";
+
+    public static String prefixUrl(){
+        if(Constant.isProduction)
+            return BaseUrlProduction;
+        else
+            return BaseUrlLocal;
+    }
 }

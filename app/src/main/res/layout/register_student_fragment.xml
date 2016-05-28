@@ -16,6 +16,13 @@
             android:layout_marginTop="15dp"/>
 
         <EditText
+            android:id="@+id/edt_student_ID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID"
+            android:layout_marginTop="10dp"/>
+
+        <EditText
             android:id="@+id/edt_student_Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
