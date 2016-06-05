@@ -69,14 +69,7 @@
             android:id="@+id/edt_teacher_Teach"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Teach"
-            android:layout_marginTop="5dp"/>
-
-        <EditText
-            android:id="@+id/edt_teacher_Email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="E-mail"
+            android:hint="Major"
             android:layout_marginTop="5dp"/>
 
         <Button

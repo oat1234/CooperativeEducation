@@ -23,6 +23,8 @@ public class PersonalDetailActivity extends AppCompatActivity{
 
     private Toolbar toolbar;
     private String mTitle;
+    private GetRegisterDao getRegisterDao = null;
+    private Bundle bundle;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class PersonalDetailActivity extends AppCompatActivity{
         }
 
         if(fragment != null){
+            fragment.setArguments(bundle);
             FragmentManager fragmentManager = getSupportFragmentManager();
             FragmentTransaction transaction =
                     fragmentManager.beginTransaction().replace(R.id.content, fragment);
@@ -80,15 +83,17 @@ public class PersonalDetailActivity extends AppCompatActivity{
     private void initFirst(){
         setTitle("Student");
 
-        Bundle bundle = getIntent().getExtras();
-        GetRegisterDao getRegisterDao = null;
+        bundle = getIntent().getExtras();
+
         if(bundle != null){
             getRegisterDao = Parcels.unwrap(bundle.getParcelable("getRegister"));
         }
 
+        Fragment fragment = FragmentStudent.newInstance();
+        fragment.setArguments(bundle);
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction =
-                fragmentManager.beginTransaction().replace(R.id.content, FragmentStudent.newInstance());
+                fragmentManager.beginTransaction().replace(R.id.content, fragment);
         transaction.commit();
     }
 

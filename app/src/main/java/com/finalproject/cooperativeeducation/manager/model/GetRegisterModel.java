@@ -1,5 +1,7 @@
 package com.finalproject.cooperativeeducation.manager.model;
 
+import com.google.gson.annotations.SerializedName;
+
 import org.parceler.Parcel;
 
 /**
@@ -8,7 +10,9 @@ import org.parceler.Parcel;
 @Parcel
 public class GetRegisterModel {
 
+    @SerializedName("id")
     private int id;
+    @SerializedName("email")
     private String email;
 
     public GetRegisterModel(){

@@ -27,7 +27,6 @@ public class FragmentCompany extends Fragment implements View.OnClickListener{
     private EditText edt_company_CompanyName;
     private EditText edt_company_Business;
     private EditText edt_company_Address;
-    private EditText edt_company_Email;
     private Button btn_company_Submit;
 
     public FragmentCompany(){
@@ -63,7 +62,6 @@ public class FragmentCompany extends Fragment implements View.OnClickListener{
         edt_company_CompanyName = (EditText) view.findViewById(R.id.edt_company_CompanyName);
         edt_company_Business = (EditText) view.findViewById(R.id.edt_company_Business);
         edt_company_Address = (EditText) view.findViewById(R.id.edt_company_Address);
-        edt_company_Email  = (EditText) view.findViewById(R.id.edt_company_Email);
         btn_company_Submit = (Button) view.findViewById(R.id.btn_company_Submit);
     }
 
@@ -77,8 +75,7 @@ public class FragmentCompany extends Fragment implements View.OnClickListener{
                 && "".equals(edt_company_PhoneNumber.getText().toString())
                 && "".equals(edt_company_CompanyName.getText().toString())
                 && "".equals(edt_company_Business.getText().toString())
-                && "".equals(edt_company_Address.getText().toString())
-                && "".equals(edt_company_Email.getText().toString())) {
+                && "".equals(edt_company_Address.getText().toString())) {
             Toast.makeText(getContext(), "Please input data", Toast.LENGTH_LONG).show();
         }else{
             if("".equals(edt_company_Name.getText().toString())
@@ -86,8 +83,7 @@ public class FragmentCompany extends Fragment implements View.OnClickListener{
                     || "".equals(edt_company_PhoneNumber.getText().toString())
                     || "".equals(edt_company_CompanyName.getText().toString())
                     || "".equals(edt_company_Business.getText().toString())
-                    || "".equals(edt_company_Address.getText().toString())
-                    || "".equals(edt_company_Email.getText().toString())){
+                    || "".equals(edt_company_Address.getText().toString())){
                 if("".equals(edt_company_Name.getText().toString()))
                     Toast.makeText(getContext(), "Please input name", Toast.LENGTH_LONG).show();
                 else if("".equals(edt_company_Surname.getText().toString()))
@@ -100,14 +96,8 @@ public class FragmentCompany extends Fragment implements View.OnClickListener{
                     Toast.makeText(getContext(), "Please input business", Toast.LENGTH_LONG).show();
                 else if ("".equals(edt_company_Address.getText().toString()))
                     Toast.makeText(getContext(), "Please input address", Toast.LENGTH_LONG).show();
-                else if ("".equals(edt_company_Email.getText().toString()))
-                    Toast.makeText(getContext(), "Please input E-mail", Toast.LENGTH_LONG).show();
             }else{
-                if(!Validator.emailValidator(edt_company_Email.getText().toString()))
-                    Toast.makeText(getContext(), "format e-mail iscorrect", Toast.LENGTH_LONG).show();
-                else{
 
-                }
             }
         }
     }

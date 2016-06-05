@@ -66,14 +66,6 @@
             android:hint="Adsress"
             android:layout_marginTop="5dp"/>
 
-        <EditText
-            android:id="@+id/edt_company_Email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="E-mail"
-            android:layout_marginTop="5dp"/>
-
-
 
         <Button
             android:id="@+id/btn_company_Submit"

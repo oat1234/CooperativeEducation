@@ -3,6 +3,7 @@ package com.finalproject.cooperativeeducation.activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -88,6 +89,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
             @Override
             public void onFailure(Call<MessageResponseDao> call, Throwable t) {
                 Toast.makeText(RegisterActivity.this, "Filed : "+t.getMessage(), Toast.LENGTH_LONG).show();
+                Log.i("Register", "Filed : "+t.getMessage());
             }
         });
     }
@@ -111,5 +113,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     @Override
     public void onFailure(Call<GetRegisterDao> call, Throwable t) {
         Toast.makeText(RegisterActivity.this, "Filed : "+t.getMessage(), Toast.LENGTH_LONG).show();
+        Log.i("Register", "Filed : "+t.getMessage());
     }
 }

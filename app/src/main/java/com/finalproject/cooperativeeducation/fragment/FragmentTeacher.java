@@ -25,7 +25,6 @@ public class FragmentTeacher extends Fragment implements View.OnClickListener {
     private EditText edt_teacher_Faculty;
     private EditText edt_teacher_Department;
     private EditText edt_teacher_Teach;
-    private EditText edt_teacher_Email;
     private Button btn_teacher_Submit;
 
     public FragmentTeacher(){
@@ -59,7 +58,6 @@ public class FragmentTeacher extends Fragment implements View.OnClickListener {
         edt_teacher_Faculty = (EditText) view.findViewById(R.id.edt_teacher_Faculty);
         edt_teacher_Department = (EditText) view.findViewById(R.id.edt_teacher_Department);
         edt_teacher_Teach = (EditText) view.findViewById(R.id.edt_teacher_Teach);
-        edt_teacher_Email  = (EditText) view.findViewById(R.id.edt_teacher_Email);
         btn_teacher_Submit = (Button) view.findViewById(R.id.btn_teacher_Submit);
     }
 
@@ -74,8 +72,7 @@ public class FragmentTeacher extends Fragment implements View.OnClickListener {
                 && "".equals(edt_teacher_Position.getText().toString())
                 && "".equals(edt_teacher_Faculty.getText().toString())
                 && "".equals(edt_teacher_Department.getText().toString())
-                && "".equals(edt_teacher_Teach.getText().toString())
-                && "".equals(edt_teacher_Email.getText().toString())) {
+                && "".equals(edt_teacher_Teach.getText().toString())) {
             Toast.makeText(getContext(), "Please input data", Toast.LENGTH_LONG).show();
             return false;
         }else{
@@ -85,8 +82,7 @@ public class FragmentTeacher extends Fragment implements View.OnClickListener {
                     || "".equals(edt_teacher_Position.getText().toString())
                     || "".equals(edt_teacher_Faculty.getText().toString())
                     || "".equals(edt_teacher_Department.getText().toString())
-                    || "".equals(edt_teacher_Teach.getText().toString())
-                    || "".equals(edt_teacher_Email.getText().toString())){
+                    || "".equals(edt_teacher_Teach.getText().toString())){
                 if("".equals(edt_teacher_Name.getText().toString()))
                     Toast.makeText(getContext(), "Please input name", Toast.LENGTH_LONG).show();
                 else if("".equals(edt_teacher_Surname.getText().toString()))
@@ -101,15 +97,10 @@ public class FragmentTeacher extends Fragment implements View.OnClickListener {
                     Toast.makeText(getContext(), "Please input department", Toast.LENGTH_LONG).show();
                 else if ("".equals(edt_teacher_Teach.getText().toString()))
                     Toast.makeText(getContext(), "Please input teach", Toast.LENGTH_LONG).show();
-                else if ("".equals(edt_teacher_Email.getText().toString()))
-                    Toast.makeText(getContext(), "Please input E-mail", Toast.LENGTH_LONG).show();
 
                 return false;
             }else {
-                if (!Validator.emailValidator(edt_teacher_Email.getText().toString())) {
-                    Toast.makeText(getContext(), "format e-mail iscorrect", Toast.LENGTH_LONG).show();
-                    return false;
-                }
+
                 return true;
             }
 

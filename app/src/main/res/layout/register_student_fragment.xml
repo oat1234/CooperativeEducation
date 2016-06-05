@@ -20,6 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="ID"
+            android:enabled="false"
             android:layout_marginTop="10dp"/>
 
         <EditText
@@ -81,11 +82,6 @@
             android:hint="Address"
             android:layout_marginTop="5dp"/>
 
-        <EditText
-            android:id="@+id/edt_student_Email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="E-mail"/>
 
         <Button
             android:id="@+id/btn_student_Submit"
