@@ -48,6 +48,7 @@ public class FragmentStudent extends Fragment implements View.OnClickListener, C
     }
     public static FragmentStudent newInstance(){
         FragmentStudent fragment = new FragmentStudent();
+
         return fragment;
     }
 
