@@ -167,6 +167,7 @@ public class FragmentCompany extends Fragment implements View.OnClickListener, C
                 Intent intent = new Intent(getContext(), MainActivity.class);
                 intent.putExtra("userId", userId);
                 startActivity(intent);
+                getActivity().finish();
             }
         }else
             Toast.makeText(getContext(), "Failed", Toast.LENGTH_LONG).show();
